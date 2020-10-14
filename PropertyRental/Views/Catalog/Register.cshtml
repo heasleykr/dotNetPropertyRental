@@ -1,0 +1,67 @@
+@{
+    ViewData["Title"] = "Register";
+}
+
+<h2>Register Property</h2>
+
+
+<!-- 
+     Property: Form
+
+-->
+    <form>
+        <div class="form-group row">
+            <label for="txtTitle" class="col-form-label">Property Title</label>
+            <input type="text" class="form-control" id="txtTitle">
+            <small id="emailHelp" class="form-text text-muted">We're excited to represent your property!!</small>
+        </div>
+        <div class="form-group row">
+            <label for="txtPrice" class="col-form-label">Price</label>
+            <input type="text" class="form-control" id="txtPrice">
+        </div>
+        <div class="form-group row">
+            <label for="txtImg" class="col-form-label">Image URL: </label>
+            <input type="text" class="form-control" id="txtImg">
+        </div>
+        <div class="form-group row">
+            <label for="txtBeds" class="col-form-label">Bedrooms: </label>
+            <input type="number" class="form-control" id="txtBeds">
+        </div>
+        <div class="form-group row">
+            <label for="txtBath" class="col-form-label">Bathrooms: </label>
+            <input type="number" class="form-control" id="txtBath">
+        </div>
+        <div class="form-group row">
+            <label for="txtArea" class="col-form-label">Area</label>
+            <input type="number" class="form-control" id="txtArea">
+            <small id="areaHelp" class="form-text text-muted">Enter area in square feet</small>
+        </div>
+        <div class="form-group row">
+            <label for="txtDescription" class="col-form-label">Property Description</label>
+            <textarea type="textarea" class="form-control" id="txtDescription" rows="8"></textarea>
+            <small id="descHelp" class="form-text text-muted">Tell us something about your property!</small>
+        </div>
+        <div class="form-group row">
+            <label class="col-4" class="col-form-label">Parking Included?</label>
+                <div class="col-8">
+                    @* <div class="custom-control custom-radio custom-control-inline"> *@
+                        <label for="radio_0">Yes</label>
+                        <input type="radio" name="radio" id="radio_0" value="true">
+                    @* </div> *@
+                    @* <div class="custom-control custom-radio custom-control-inline"> *@
+                        <label for="radio_1">No</label>
+                        <input type="radio" name="radio" id="radio_1" value="false">
+                   
+                    @* </div> *@
+            </div>
+        </div>
+
+        <button type="button" class="btn btn-primary" id="btnSave" onclick="saveProperty">Save Property</button>
+    </form>
+
+
+    @* Render this somewhere else! NOT in the main body. Render in 'Scrips' section*@
+    @section Scripts{
+        <script src="/js/property.js"></script>
+        <script src="/js/register.js"></script>
+    }
