@@ -23,7 +23,7 @@ namespace PropertyRental.Controllers
         {
 
             //Remember these are printed on command terminal!! It's backend. 
-            System.Console.WriteLine("saving a property");
+            System.Console.WriteLine("Success: Saving A Property");
             System.Console.WriteLine(prop.Title);
 
             prop.Id = 1;
