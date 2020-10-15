@@ -25,22 +25,62 @@ function saveProperty() {
     var desc = UI.$description.val();
     var parking = $("#radio_0").is(":checked");
     
-    //HOMEWORK: User banner alerts from Bootstrap!
+    
     //Data validation
     if(!price){ //if the price is: Empty, 0, false, Nan
-        alert("Error, verify the price.");
+        
+        //show an error on screen
+        $('#alertMessage').innerText("Error, verify the price.");
+        $('#alertError').removeClass('hide');
+
+        //set a timer(mili) to remove 
+        setTimeout(function(){
+            //hide error to user
+            $('#alertError').addClass('hide');
+        } , 3000);
+  
         return; //Stop and don't go forward with next lines of code
     }
     if(!beds){ //if the price is: Empty, 0, false, Nan
-        alert("Error, verify the number of bedrooms.");
+
+        //show an error on screen
+        $('#alertMessage').innerText("Error, verify the number of bedrooms.");
+        $('#alertError').removeClass('hide');
+
+        //set a timer(mili) to remove 
+        setTimeout(function(){
+            //hide error to user
+            $('#alertError').addClass('hide');
+        } , 3000);
+ 
         return; //Stop and don't go forward with next lines of code
     }
     if(!baths){ //if the price is: Empty, 0, false, Nan
-        alert("Error, verify the number of bathrooms.");
+
+        //show an error on screen
+        $('#alertMessage').innerText("Error, verify the number of bathrooms.");
+        $('#alertError').removeClass('hide');
+
+        //set a timer(mili) to remove 
+        setTimeout(function(){
+            //hide error to user
+            $('#alertError').addClass('hide');
+        } , 3000);
+
         return; //Stop and don't go forward with next lines of code
     }
     if(!area){ //if the price is: Empty, 0, false, Nan
-        alert("Error, verify the area.");
+
+        //show an error on screen
+        $('#alertMessage').innerText("Error, verify the area.");
+        $('#alertError').removeClass('hide');
+
+        //set a timer(mili) to remove 
+        setTimeout(function(){
+            //hide error to user
+            $('#alertError').addClass('hide');
+        } , 3000);
+
         return; //Stop and don't go forward with next lines of code
     }
 
@@ -67,16 +107,30 @@ function saveProperty() {
             //clear the form
             clearForm();
 
-            //show a message on screen
+            //show success message to user
+            $('#alertSuccess').removeClass('hide');
+
+            //set a timer(mili) to remove 
+            setTimeout(function(){
+                //hide success to user
+                $('#alertSuccess').addClass('hide');
+            } , 3000);
         },
         error: (details) => {
             console.log("Error", details);
 
-            //show an error on screen and DONT clear the screen
+            //show an error on screen and DONT clear form
+            $('#alertMessage').innerText("Server Error");
+            $('#alertError').removeClass('hide');
+
+            //set a timer(mili) to remove 
+            setTimeout(function(){
+                //hide error to user
+                $('#alertError').addClass('hide');
+            } , 3000);
         }
     });
 
-    //show a message to user
 }
 
 function init(){

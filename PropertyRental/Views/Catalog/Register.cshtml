@@ -1,6 +1,9 @@
 @{
     ViewData["Title"] = "Register";
 }
+@section Styles{
+    <link rel="stylesheet" href="~/css/register.css"/>
+}
 
 <h2>Register Property</h2>
 
@@ -44,19 +47,21 @@
         <div class="form-group row">
             <label class="col-4" class="col-form-label">Parking Included?</label>
                 <div class="col-8">
-                    @* <div class="custom-control custom-radio custom-control-inline"> *@
                         <label for="radio_0">Yes</label>
                         <input type="radio" name="radio" id="radio_0" value="true">
-                    @* </div> *@
-                    @* <div class="custom-control custom-radio custom-control-inline"> *@
                         <label for="radio_1">No</label>
                         <input type="radio" name="radio" id="radio_1" value="false">
-                   
-                    @* </div> *@
             </div>
         </div>
 
         <button type="button" class="btn btn-primary" id="btnSave" onclick="saveProperty">Save Property</button>
+
+        <div id="alertSuccess" class="alert alert-success hide">
+                    Task registered!
+        </div>
+        <div id="alertError" class="alert alert-danger hide">
+                    <p id="alertMessage">Please verify your date!</p>
+        </div>
     </form>
 
 
