@@ -14417,6 +14417,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/Users/KatelynnHeasley/Desktop/SDGKU/107/PropertyRental/Views/Catalog/Index.cshtml",
+      "TargetPath": "Views\\Catalog\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/Users/KatelynnHeasley/Desktop/SDGKU/107/PropertyRental/Views/Shared/_Layout.cshtml",
       "TargetPath": "Views\\Shared\\_Layout.cshtml",
       "FileKind": "mvc"

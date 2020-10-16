@@ -30,7 +30,7 @@ function saveProperty() {
     if(!price){ //if the price is: Empty, 0, false, Nan
         
         //show an error on screen
-        $("#alertMessage").innerHTML = "Error, verify the price!!!!";
+        $("#alertMessage").text("Error, Please verify the price.");
         $("#alertError").removeClass("hide");
 
         //set a timer(mili) to remove 
@@ -44,7 +44,7 @@ function saveProperty() {
     if(!beds){ //if the price is: Empty, 0, false, Nan
 
         //show an error on screen
-        $("#alertMessage").innerHTML = "Error, verify the number of bedrooms.";
+        $("#alertMessage").text("Error, Please verify the number of bedrooms.");
         $("#alertError").removeClass("hide");
 
         //set a timer(mili) to remove 
@@ -58,7 +58,7 @@ function saveProperty() {
     if(!baths){ //if the price is: Empty, 0, false, Nan
 
         //show an error on screen
-        $("#alertMessage").innerHTML = "Error, verify the number of bathrooms.";
+        $("#alertMessage").text("Error, Please verify the number of bathrooms.");
         $("#alertError").removeClass("hide");
 
         //set a timer(mili) to remove 
@@ -72,7 +72,7 @@ function saveProperty() {
     if(!area){ //if the price is: Empty, 0, false, Nan
 
         //show an error on screen
-        $("#alertMessage").innerHTML = "Error, verify the area.";
+        $("#alertMessage").text("Error, Please verify the area.");
         $("#alertError").removeClass("hide");
 
         //set a timer(mili) to remove 
@@ -113,6 +113,8 @@ function saveProperty() {
                 //hide success to user
                 $("#alertSuccess").addClass("hide");
             } , 3000);
+
+
         },
         error: (details) => {
             console.log("Error", details);
@@ -130,6 +132,7 @@ function saveProperty() {
     });
 
 }
+
 
 function init(){
     console.log("Register Page");
