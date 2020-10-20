@@ -1,7 +1,111 @@
+body{
+    background: url(../css/img/moroccan1.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+#catalogTitle{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: navy;
+    background-color: rgba(252, 250, 249, 0.8);
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+#titleMain{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+h1{
+    text-transform: uppercase;
+    font-family: 'Forum', cursive;
+}
+h2, h3{
+    font-family: 'Poiret One', cursive;
+}
+i{
+    color: #7a5504;
+    padding-right: 1rem;
+}
+#titleMain .diamonds{
+    padding-top: .1rem;
+    margin: 1rem;
+}
+#showCase{
+    padding-top: 2rem;
+    background-color: rgba(252, 250, 249, 0.5);
+    border: 1px solid navy;
+}
+#logoC{
+    font-size: 7rem;
+    font-family: 'Pinyon Script', cursive;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: #443421;
+    filter: drop-shadow(2px 2px 2px #fcf9f9);
+}
+#listings{
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    color: #0b0e41;
+    border-top: 1px solid #443421;
+}
+
 .property{
     display: inline-block;
+    background-color: white;
     border: 1px solid #e9e9e8;
-    width: 420px;
-    height: 300px;
+    width: 6rem;
+    height: 60rem;
     padding: 10px;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+.property:hover{
+    width: 7rem;
+    height: 60rem;
+    border: 1px solid navy
+}
+#imageProp{
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+    padding-bottom: 2rem;
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+    border-bottom: 1px solid #7a5504;
+}
+#listHead{
+    padding-left: 1rem;
+    padding-bottom: 2rem;
+}
+#details{
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 2rem;
+    border-top: 1px solid #7a5504;
+}
+#parkSec{
+    display: flex;
+    padding-left: 2.5rem;
+    border-bottom: 1px solid #7a5504;
+}
+#price{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 1.5rem;
+    border-bottom: 1px solid #7a5504;
+}
+.property p{
+    font-family: 'Encode Sans Condensed', sans-serif;
 }

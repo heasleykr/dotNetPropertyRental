@@ -1,76 +1,87 @@
-// Delete property: AJAX DELETE: /catalog/DeleteProperty/2
-function deleteProp(propId){
-        var id = propId;
-        $.ajax({
-          url: "/catalog/DeleteProperty/" + id,
-          type: "DELETE",
-          success: () => {
-            console.log("deleted");
-          },
-          error: (details) => {
-            console.log("Error", details);
-          },
-        });
+// Global Variables
+var bedIcon = `<i class="fas fa-bed"></i>`;
+var bathIcon = `<i class="fas fa-shower"></i>`;
+var carIcon = `<i class="fas fa-car"></i>`;
+
+// Delete property: AJAX DELETE
+function deleteProp(propId) {
+  var id = propId;
+  $.ajax({
+    url: "/catalog/DeleteProperty/" + id,
+    type: "DELETE",
+    success: () => {
+      console.log("deleted");
+    },
+    error: (details) => {
+      console.log("Error", details);
+    },
+  });
 }
 
 //function to display Property listing on Register and Index
-function displayProperty(property){
+function displayProperty(property) {
+  //Display correct parking info
+  var parking;
 
-    // Use Bootstrap "card!!1"
-    
-    //Create inner HTML display 
-    //TODO: Get property.id from server. 
-    var propHtml = `
-        <div id="${property.id}" class="property"> 
-            <img src="${property.imageUrl}">
-            <h2>${property.title}</h2>
-            <p>${property.description}</p>
-            <p>${property.bedrooms}</p>
-            <p>${property.bathrooms}</p>
-            <p>${property.parking}</p>
-            <p>${property.price}</p>
+  if (property.parking === true) {
+    parking = "Yes";
+  } else {
+    parking = "No";
+  }
+  //Create inner HTML display
+  var propHtml = `
+        <div id="${property.id}" class="property" style="width: 18rem;"> 
+            <img src="${property.imageUrl}" id="imageProp">
+            <div id="listHead">
+                <h2 class="card-title">${property.title}</h2>
+                <h3>Palm Beach, USA</h3>
+            </div>
+            <div id="details">
+                <p>${bedIcon}${property.bedrooms} Bed</p>
+                <p>${bathIcon}${property.bathrooms} Bath</p>
+            </div>
+            <div id="parkSec">
+                <p>${carIcon}Parking Included: ${parking}</p>
+            </div>
+                <p id="price"><b>Price: $${property.price}.00</b> $USD</p>
+                <p>${property.description}</p>
         </div>
     `;
 
-    //Add to Register.html & Index.html
-    var container = $("#listings");
-    container.append(propHtml);
-
+  //Add to Register.html & Index.html
+  var container = $("#listings");
+  container.append(propHtml);
 }
-
 
 //Function to grab Properties from DB
-function fetchData(){
+function fetchData() {
+  // GET ajax  /catalog/getProperties
+  $.ajax({
+    url: "/catalog/getProperties",
+    type: "GET",
+    success: (res) => {
+      console.log(res);
 
-    // GET ajax  /catalog/getProperties
-    $.ajax({
-        url: "/catalog/getProperties",
-        type: "GET",
-        success: (res) => {
-            console.log(res);
+      //Sort array by price and list highest to lowest
+      // res.sort(function (a, b) {
+      //   return a - b;
+      // });
 
-            //homework Show everything for the property on html
-            for(let i = 0; i < res.length; i++){
-                displayProperty(res[i]);
-            }
-        },
-        error: (details) => {
-            console.log("Error", details);
-
-        }
-    });
-
+      //Sort and send to display on HTML
+      for (let i = 0; i < res.length; i++) {
+        displayProperty(res[i]);
+      }
+    },
+    error: (details) => {
+      console.log("Error", details);
+    },
+  });
 }
 
+function init() {
+  console.log("Catalog Page");
 
-
-function init(){
-
-
-    console.log("Catalog Page");
-
-    fetchData();
-
+  fetchData();
 }
 
 window.onload = init;

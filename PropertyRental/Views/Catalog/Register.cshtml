@@ -2,71 +2,71 @@
     ViewData["Title"] = "Register";
 }
 @section Styles{
+    <link href="https://fonts.googleapis.com/css2?family=Encode+Sans+Condensed:wght@100&family=Forum&family=Poiret+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="~/css/register.css"/>
 }
 
-<h2>Register Property</h2>
-
-
-<!-- 
-     Property: Form
-
--->
-    <form>
-        <div class="form-group row">
-            <label for="txtTitle" class="col-form-label">Property Title</label>
-            <input type="text" class="form-control" id="txtTitle">
-            <small id="emailHelp" class="form-text text-muted">We're excited to represent your property!!</small>
-        </div>
-        <div class="form-group row">
-            <label for="txtPrice" class="col-form-label">Price</label>
-            <input type="text" class="form-control" id="txtPrice">
-        </div>
-        <div class="form-group row">
-            <label for="txtImg" class="col-form-label">Image URL: </label>
-            <input type="text" class="form-control" id="txtImg">
-        </div>
-        <div class="form-group row">
-            <label for="txtBeds" class="col-form-label">Bedrooms: </label>
-            <input type="number" class="form-control" id="txtBeds">
-        </div>
-        <div class="form-group row">
-            <label for="txtBath" class="col-form-label">Bathrooms: </label>
-            <input type="number" class="form-control" id="txtBath">
-        </div>
-        <div class="form-group row">
-            <label for="txtArea" class="col-form-label">Area</label>
-            <input type="number" class="form-control" id="txtArea">
-            <small id="areaHelp" class="form-text text-muted">Enter area in square feet</small>
-        </div>
-        <div class="form-group row">
-            <label for="txtDescription" class="col-form-label">Property Description</label>
-            <textarea type="textarea" class="form-control" id="txtDescription" rows="8"></textarea>
-            <small id="descHelp" class="form-text text-muted">Tell us something about your property!</small>
-        </div>
-        <div class="form-group row">
-            <label class="col-4" class="col-form-label">Parking Included?</label>
-                <div class="col-8">
-                        <label for="radio_0">Yes</label>
-                        <input type="radio" name="radio" id="radio_0" value="true">
-                        <label for="radio_1">No</label>
-                        <input type="radio" name="radio" id="radio_1" value="false">
+<body>
+    <div id="registerHead">
+        <h1 id="logo">CR</h1>
+        <h2 id="head1">List & Register Your Property With Us</h2>
+        <h2 id="head2">Cohort Twevle Realty, Palm Beach</h2>
+    </div>
+        <form id="form">
+            <div class="form-group row">
+                <label for="txtTitle" class="col-form-label">Property Title</label>
+                <input type="text" class="form-control" id="txtTitle">
+                <small id="emailHelp" class="form-text text-muted">We're excited to represent your property!!</small>
             </div>
-        </div>
+            <div class="form-group row">
+                <label for="txtPrice" class="col-form-label">Price</label>
+                <input type="text" class="form-control" id="txtPrice">
+            </div>
+            <div class="form-group row">
+                <label for="txtImg" class="col-form-label">Image URL: </label>
+                <input type="text" class="form-control" id="txtImg">
+            </div>
+            <div class="form-group row">
+                <label for="txtBeds" class="col-form-label">Bedrooms: </label>
+                <input type="number" class="form-control" id="txtBeds">
+            </div>
+            <div class="form-group row">
+                <label for="txtBath" class="col-form-label">Bathrooms: </label>
+                <input type="number" class="form-control" id="txtBath">
+            </div>
+            <div class="form-group row">
+                <label for="txtArea" class="col-form-label">Area</label>
+                <input type="number" class="form-control" id="txtArea">
+                <small id="areaHelp" class="form-text text-muted">Enter area in square feet</small>
+            </div>
+            <div class="form-group row">
+                <label for="txtDescription" class="col-form-label">Property Description</label>
+                <textarea type="textarea" class="form-control" id="txtDescription" rows="8"></textarea>
+                <small id="descHelp" class="form-text text-muted">Tell us something about your property!</small>
+            </div>
+            <div class="form-group row">
+                <label class="col-4" class="col-form-label">Parking Included?</label>
+                    <div class="form-check">
+                            <input type="radio" name="radio" id="radio_0" class="form-check-input" value="true">
+                            <label for="radio_0" class="form-check-label">Yes</label>
+                    </div>
+                    <div class="form-check">
+                            <input type="radio" name="radio" id="radio_1" class="form-check-input" value="false">
+                            <label for="radio_1" class="form-check-label">No</label>
+                    </div>
+            </div>
 
-        <button type="button" class="btn btn-primary" id="btnSave" onclick="saveProperty">Save Property</button>
+            <button type="button" class="btn btn-primary" id="btnSave" onclick="saveProperty">Save Property</button>
 
-        <div id="alertSuccess" class="alert alert-success hide">
-                    Property Registered!
-        </div>
-        <div id="alertError" class="alert alert-danger hide">
-                    <p id="alertMessage">Please verify your date!</p>
-        </div>
-    </form>
-
-    <h1>Rental Properties</h1>
-    <div class="listings"></div>
-
+            <div id="alertSuccess" class="alert alert-success hide">
+                        Property Registered!
+            </div>
+            <div id="alertError" class="alert alert-danger hide">
+                        <p id="alertMessage">Please verify your date!</p>
+            </div>
+        </form>
+</body>
 
     @* Render this somewhere else! NOT in the main body. Render in 'Scrips' section*@
     @section Scripts{

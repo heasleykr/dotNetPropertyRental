@@ -1,4 +1,56 @@
-
+body{
+   background: url(../css/img/registerBack.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+   background-size: cover;
+}
 .hide{
    display: none;
 }
+h2{
+   display: flex;
+   flex-direction: column;
+   text-align: center;
+   text-transform: uppercase;
+   font-family: 'Forum', cursive;
+   color: white;
+   filter: drop-shadow(4px 4px 4px #706e6e);
+}
+#registerHead{
+   padding-top: 12rem;
+}
+#logo{
+   font-size: 7rem;
+   font-family: 'Pinyon Script', cursive;
+   display: flex;
+   flex-direction: column;
+   text-align: center;
+   color: #443421;
+   filter: drop-shadow(2px 2px 2px #fcf9f9);
+}
+#head1{
+   font-size: 2.5rem;
+   padding-bottom: .5rem;
+   border-top: 1px solid white;
+}
+#form{
+   padding-top: 2rem;
+   padding-left: 4rem;
+   padding-right: 4rem;
+   margin-left: auto;
+   margin-right: auto;
+   width: 90%;
+   background-color: white;
+   border: 2rem solid white;
+
+}
+#btnSave{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   margin-left: auto;
+   margin-right: auto;
+
+}
+
